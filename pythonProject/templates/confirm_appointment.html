@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confirm Appointment</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #000; /* Set black background directly */
+        }
+
+        .container {
+            text-align: center;
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin: 20px auto; /* Center the container */
+            max-width: 400px; /* Limit container width for better readability */
+        }
+
+        h1 {
+            color: #00bcd4;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        input {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 15px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        button {
+            background-color: #4caf50;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Confirm Appointment</h1>
+        <p>Okay great! Can I get your phone number and name?</p>
+        <form action="/appointment_confirmed" method="post">
+            <input type="hidden" name="user_response" value="{{ user_response }}">
+            <label for="user_name">Your Name:</label>
+            <input type="text" id="user_name" name="user_name" required><br>
+            <label for="phone_number">Your Phone Number:</label>
+            <input type="tel" id="phone_number" name="phone_number" required pattern="[0-9]{10}"><br>
+            <button type="submit">Confirm Appointment</button>
+        </form>
+    </div>
+</body>
+</html>
